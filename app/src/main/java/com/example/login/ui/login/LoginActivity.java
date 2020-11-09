@@ -21,7 +21,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.content.Intent;
 import com.example.login.R;
 import com.example.login.ui.login.LoginViewModel;
 import com.example.login.ui.login.LoginViewModelFactory;
@@ -112,9 +112,8 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+             Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
+             LoginActivity.this.startActivity(myIntent);
             }
         });
     }
